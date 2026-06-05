@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  x-front-template:
+    build: .
+    container_name: x-front-template
+    restart: unless-stopped
+
+    ports:
+      - "5678:5678"
+    # if you want to persist
+#    volumes:
+#      - ./app:/app
