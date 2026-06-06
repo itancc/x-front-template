@@ -1,11 +1,18 @@
-FROM debian:11
-COPY . /app
+FROM node:20-alpine AS builder
+
 WORKDIR /app
-RUN apt-get update
-RUN apt-get install -y wget curl make sudo unzip
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-RUN apt-get install -y nodejs
-RUN npm i -g pnpm
-RUN pnpm install
-EXPOSE 5678
-CMD [ "pnpm", "dev" ]
+RUN corepack enable
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+RUN pnpm build
+
+FROM nginx:1.27-alpine AS runner
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

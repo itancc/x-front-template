@@ -1,0 +1,24 @@
+.x-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.x-modal__btn {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.x-modal__btn.is-primary {
+  border-color: transparent;
+  color: #fff;
+  background: var(--app-gradient-primary);
+}
+
+.x-modal__btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

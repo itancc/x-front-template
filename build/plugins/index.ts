@@ -49,7 +49,6 @@ function productionPluginOptions(): PluginOption[] {
 }
 
 export function createVitePlugins({ mode }: ConfigEnv): PluginOption[] {
-  console.log("当前构建环境:", mode);
   const envVitePluginsMap: Record<string, PluginOption[]> = {
     report: reportPluginOptions(),
     development: [vueDevTools()],
