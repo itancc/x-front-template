@@ -1,20 +1,19 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
-import 'element-plus/dist/index.css'
-import 'virtual:uno.css'
-
 import App from './App.vue'
-import { setupPermissionDirective } from './directives/permission'
-import { router, setupRouterGuards } from './router'
-import './style.css'
+
+import 'virtual:uno.css'
+import '@styles/index.scss'
+
+import { initStore } from "@/stores"
+import { initRouter } from "@/router"
+import { setupGlobDirectives } from '@/directives'
 
 const app = createApp(App)
-const pinia = createPinia()
 
-setupRouterGuards(router, pinia)
+initStore(app)
+initRouter(app)
+setupGlobDirectives(app)
 
-app.use(pinia)
-app.use(router)
-setupPermissionDirective(app)
 app.mount('#app')
+
+

@@ -28,12 +28,14 @@ function resolveManualChunk(id: string) {
 export default defineConfig((config) => {
   return {
     base: '/',
+    envDir: 'env',
     define: createViteDefine(config),
     resolve: {
       alias: {
         '@': resolve(__dirname, './src'),
         '@api': resolve(__dirname, './src/api'),
         '@assets': resolve(__dirname, './src/assets'),
+        '@styles': resolve(__dirname, './src/styles'),
         '#': resolve(__dirname, './types'),
       },
     },

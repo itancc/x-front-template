@@ -12,11 +12,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElForm: typeof import('element-plus/es')['ElForm']
-    ElFormItem: typeof import('element-plus/es')['ElFormItem']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
@@ -24,11 +20,7 @@ declare module 'vue' {
 
 // For TSX support
 declare global {
-  const ElButton: typeof import('element-plus/es')['ElButton']
-  const ElForm: typeof import('element-plus/es')['ElForm']
-  const ElFormItem: typeof import('element-plus/es')['ElFormItem']
-  const ElInput: typeof import('element-plus/es')['ElInput']
-  const ElSwitch: typeof import('element-plus/es')['ElSwitch']
+  const ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
   const RouterLink: typeof import('vue-router')['RouterLink']
   const RouterView: typeof import('vue-router')['RouterView']
 }
