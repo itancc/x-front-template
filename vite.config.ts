@@ -27,7 +27,7 @@ function resolveManualChunk(id: string) {
 
 export default defineConfig((config) => {
   return {
-    base: '/',
+    base: config.mode === 'production' ? '/x-front-template/' : '/',
     define: createViteDefine(config),
     resolve: {
       alias: {
