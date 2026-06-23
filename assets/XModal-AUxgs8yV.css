@@ -1,0 +1,1 @@
+.x-modal__footer{justify-content:flex-end;gap:10px;display:flex}.x-modal__btn{border:1px solid var(--app-border);background:#fffc;border-radius:999px;min-height:38px;padding:0 14px}.x-modal__btn.is-primary{color:#fff;background:var(--app-gradient-primary);border-color:#0000}.x-modal__btn:disabled{cursor:not-allowed;opacity:.6}
