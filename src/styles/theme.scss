@@ -1,0 +1,104 @@
+// ─── Theme: CSS Custom Properties ────────────────────────────────────────────
+// All theme tokens are defined here. The JS store writes accent/radius/font
+// overrides via style.setProperty; light↔dark is switched with data-color-mode.
+// ─────────────────────────────────────────────────────────────────────────────
+
+:root {
+  // ── Typography ───────────────────────────────────────────────────────────
+  --font-family: Inter, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  // ── Sidebar ──────────────────────────────────────────────────────────────
+  --sidebar-w: 255px;
+  --sidebar-w-sm: 62px;
+  --sidebar-bg: #1e2028;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-text: rgba(255, 255, 255, 0.80);
+  --sidebar-muted: rgba(255, 255, 255, 0.38);
+  --sidebar-hover: rgba(255, 255, 255, 0.06);
+  --sidebar-active-bg: rgba(255, 255, 255, 0.10);
+  --sidebar-active-text: #ffffff;
+  --sidebar-icon: rgba(255, 255, 255, 0.48);
+  --sidebar-section-title: rgba(255, 255, 255, 0.30);
+  --sidebar-input-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-input-border: rgba(255, 255, 255, 0.09);
+  --sidebar-kbd-bg: rgba(255, 255, 255, 0.08);
+  --sidebar-kbd-text: rgba(255, 255, 255, 0.36);
+  --sidebar-divider: rgba(255, 255, 255, 0.07);
+  --sidebar-footer-border: rgba(255, 255, 255, 0.08);
+
+  // ── Header ───────────────────────────────────────────────────────────────
+  --header-h: 48px;
+  --header-bg: #ffffff;
+  --header-border: #e5e7eb;
+  --header-text: #111827;
+  --header-muted: #6b7280;
+  --header-hover: #f9fafb;
+
+  // ── Surface / Content ────────────────────────────────────────────────────
+  --page-bg: #f3f4f6;
+  --surface: #ffffff;
+  --surface-2: #f9fafb;
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --text-placeholder: #9ca3af;
+
+  // ── Accent (written by store JS per color scheme) ─────────────────────────
+  --accent: #4f46e5;
+  --accent-h: #4338ca;
+  --accent-text: #ffffff;
+  --accent-soft: rgba(79, 70, 229, 0.08);
+  --accent-border: rgba(79, 70, 229, 0.20);
+
+  // ── Border Radius (written by store JS per radius mode) ───────────────────
+  --r-xs: 3px;
+  --r-sm: 5px;
+  --r: 8px;
+  --r-lg: 12px;
+
+  // ── Shadows ──────────────────────────────────────────────────────────────
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.14);
+
+  // ── Subscription Badges ──────────────────────────────────────────────────
+  --badge-pro-bg: #eff6ff;
+  --badge-pro-text: #1d4ed8;
+  --badge-pro-border: #bfdbfe;
+  --badge-plus-bg: #fefce8;
+  --badge-plus-text: #854d0e;
+  --badge-plus-border: #fde68a;
+  --badge-prime-bg: #f5f3ff;
+  --badge-prime-text: #6d28d9;
+  --badge-prime-border: #ddd6fe;
+}
+
+// ─── Dark mode ───────────────────────────────────────────────────────────────
+[data-color-mode='dark'] {
+  --header-bg: #18181b;
+  --header-border: #27272a;
+  --header-text: #f4f4f5;
+  --header-muted: #a1a1aa;
+  --header-hover: #27272a;
+
+  --page-bg: #09090b;
+  --surface: #18181b;
+  --surface-2: #1f1f22;
+  --border: #27272a;
+  --border-light: #1f1f22;
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-placeholder: #52525b;
+
+  --badge-pro-bg: rgba(29, 78, 216, 0.12);
+  --badge-pro-text: #93c5fd;
+  --badge-pro-border: rgba(29, 78, 216, 0.28);
+  --badge-plus-bg: rgba(133, 77, 14, 0.12);
+  --badge-plus-text: #fcd34d;
+  --badge-plus-border: rgba(133, 77, 14, 0.28);
+  --badge-prime-bg: rgba(109, 40, 217, 0.12);
+  --badge-prime-text: #c4b5fd;
+  --badge-prime-border: rgba(109, 40, 217, 0.28);
+}

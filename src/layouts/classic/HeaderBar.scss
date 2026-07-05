@@ -1,0 +1,203 @@
+// HeaderBar — component-specific styles
+// Colors/borders use CSS custom properties from theme.scss.
+
+.crm-header {
+  display: flex;
+  align-items: center;
+  height: var(--header-h);
+  padding: 0 16px;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  gap: 12px;
+}
+
+// ─── Breadcrumb ───────────────────────────────────────────────────────────────
+.crm-header__crumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.crm-header__crumb-seg {
+  font-size: 13px;
+  color: var(--header-muted);
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: var(--r-xs);
+  padding: 2px 4px;
+  transition: background 0.13s, color 0.13s;
+
+  &:hover {
+    background: var(--header-hover);
+    color: var(--header-text);
+  }
+}
+
+.crm-header__crumb-sep {
+  font-size: 12px;
+  color: var(--header-muted);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.crm-header__crumb-active {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--header-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ─── Actions ──────────────────────────────────────────────────────────────────
+.crm-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+// Data / Details segment
+.crm-header__segment {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+
+.crm-header__seg-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  font-size: 12.5px;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: var(--header-muted);
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s;
+
+  &:hover {
+    background: var(--header-hover);
+    color: var(--header-text);
+  }
+
+  &.is-active {
+    background: var(--accent);
+    color: var(--accent-text);
+  }
+
+  & + & {
+    border-left: 1px solid var(--border);
+  }
+}
+
+// Share button
+.crm-header__share {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  font-size: 12.5px;
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+  transition: background 0.13s;
+
+  &:hover {
+    background: var(--accent-h);
+  }
+}
+
+// Theme toggle icon button
+.crm-header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--header-muted);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s;
+
+  &:hover {
+    background: var(--header-hover);
+    color: var(--header-text);
+  }
+}
+
+// ─── Theme drawer ─────────────────────────────────────────────────────────────
+.crm-theme-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px 0;
+}
+
+.crm-theme-drawer__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+}
+
+.crm-theme-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.crm-theme-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.13s, transform 0.13s;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &.is-active {
+    border-color: var(--text);
+    transform: scale(1.15);
+  }
+
+  &.is-blue    { background: #2563eb; }
+  &.is-sky     { background: #0284c7; }
+  &.is-indigo  { background: #4f46e5; }
+  &.is-violet  { background: #7c3aed; }
+  &.is-rose    { background: #e11d48; }
+  &.is-red     { background: #dc2626; }
+  &.is-orange  { background: #ea580c; }
+  &.is-amber   { background: #d97706; }
+  &.is-lime    { background: #65a30d; }
+  &.is-green   { background: #16a34a; }
+  &.is-emerald { background: #059669; }
+  &.is-cyan    { background: #0891b2; }
+}

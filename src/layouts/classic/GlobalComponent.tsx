@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'GlobalComponent',
+  name: 'XGlobalComponent',
   setup() {
-    return () => <div></div>
+    return () => null
   },
 })

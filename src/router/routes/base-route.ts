@@ -4,7 +4,7 @@ import ClassicLayout from '@/layouts/classic/index'
 export const baseRoutes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'root',
+    name: 'crm-layout',
     component: ClassicLayout,
   },
 ]
