@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-const AppLayout = () => import('../layouts/default/DefaultLayout.vue')
-const LoginView = () => import('../features/auth/pages/LoginView.vue')
-const DashboardView = () => import('../features/dashboard/pages/DashboardView.vue')
-const ForbiddenView = () => import('../features/exception/pages/ForbiddenView.vue')
-const NotFoundView = () => import('../features/exception/pages/NotFoundView.vue')
+const AppLayout = () => import('../layouts/default/DefaultLayout')
+const LoginView = () => import('../features/auth/pages/LoginView')
+const DashboardView = () => import('../features/dashboard/pages/DashboardView')
+const ForbiddenView = () => import('../features/exception/pages/ForbiddenView')
+const NotFoundView = () => import('../features/exception/pages/NotFoundView')
 
 export const appRoutes: RouteRecordRaw[] = [
   {

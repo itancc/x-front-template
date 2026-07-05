@@ -35,11 +35,19 @@ export default defineComponent({
 
     const readAttr = <T,>(keys: string[], fallback: T) => getAttrValue<T>(attrs, keys, fallback)
 
-    const tableData = computed(() => readAttr<Array<Record<string, unknown>>>(['data'], []))
-    const loading = computed(() => Boolean(readAttr(['loading'], false)))
-    const loadingText = computed(() => readAttr(['loadingText', 'loading-text'], DEFAULT_LOADING_TEXT))
-    const emptyText = computed(() => readAttr(['emptyText', 'empty-text'], DEFAULT_EMPTY_TEXT))
-    const rowKey = computed(() => readAttr<string | ((row: Record<string, unknown>) => string)>(['rowKey', 'row-key'], 'id'))
+    const tableData = computed(() =>
+      (props.data?.length ? props.data : readAttr<Array<Record<string, unknown>>>(['data'], [])) as Array<Record<string, unknown>>
+    )
+    const loading = computed(() => props.loading ?? Boolean(readAttr(['loading'], false)))
+    const loadingText = computed(() =>
+      props.loadingText ?? readAttr(['loadingText', 'loading-text'], DEFAULT_LOADING_TEXT)
+    )
+    const emptyText = computed(() =>
+      props.emptyText ?? readAttr(['emptyText', 'empty-text'], DEFAULT_EMPTY_TEXT)
+    )
+    const rowKey = computed(() =>
+      props.rowKey ?? readAttr<string | ((row: Record<string, unknown>) => string)>(['rowKey', 'row-key'], 'id')
+    )
     const tableAttrs = computed(() => omitKeys(attrs, OMITTED_ATTR_KEYS))
 
     const { effectiveVisibleColumnKeys, finalColumns, persistableColumns, resetColumnVisibility, toggleColumn } =
@@ -153,10 +161,14 @@ export default defineComponent({
           rowKey={resolveTableRowKey}
           emptyText={emptyText.value}
           v-loading={loading.value}
-          elementLoadingText={loadingText.value}
           {...tableAttrs.value}
-          onSelectionChange={(value: Array<Record<string, unknown>>) => emit('selection-change', value)}
-          onSortChange={(payload: XTableSortChangePayload) => emit('sort-change', payload)}
+          {...{
+            'element-loading-text': loadingText.value,
+            'onSelection-change': (value: Array<Record<string, unknown>>) =>
+              emit('selection-change', value),
+            'onSort-change': (payload: XTableSortChangePayload) =>
+              emit('sort-change', payload),
+          } as Record<string, unknown>}
         >
           {{
             empty: () => slots.empty?.() ?? <ElEmpty description={emptyText.value} />,

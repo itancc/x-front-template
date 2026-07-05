@@ -1,12 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-const UserListView = () => import('../features/users/pages/UserListView.vue')
-const UserDetailView = () => import('../features/users/pages/UserDetailView.vue')
-const SettingsView = () => import('../features/system/pages/SettingsView.vue')
-const StandardFormView = () => import('../features/templates/pages/StandardFormView.vue')
-const DetailTemplateView = () => import('../features/templates/pages/DetailTemplateView.vue')
-const TodoCenterView = () => import('../features/messages/pages/TodoCenterView.vue')
-const ComponentShowcaseView = () => import('../features/showcase/pages/ComponentShowcaseView.vue')
+const UserListView = () => import('../features/users/pages/UserListView')
+const UserDetailView = () => import('../features/users/pages/UserDetailView')
+const SettingsView = () => import('../features/system/pages/SettingsView')
+const StandardFormView = () => import('../features/templates/pages/StandardFormView')
+const DetailTemplateView = () => import('../features/templates/pages/DetailTemplateView')
+const TodoCenterView = () => import('../features/messages/pages/TodoCenterView')
+const ComponentShowcaseView = () => import('../features/showcase/pages/ComponentShowcaseView')
 
 type AsyncRouteLoader = () => Promise<unknown>
 type AsyncRouteMeta = NonNullable<RouteRecordRaw['meta']>

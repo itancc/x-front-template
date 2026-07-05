@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import 'element-plus/dist/index.css'
 import 'virtual:uno.css'
 
-import App from './App.vue'
+import App from './App'
 import { setupPermissionDirective } from './directives/permission'
 import { router, setupRouterGuards } from './router'
 import './style.css'
