@@ -4,6 +4,7 @@ import SidebarMenu from './SidebarMenu'
 import GlobalComponent from './GlobalComponent'
 import HeaderBar from './HeaderBar'
 import PageContent from './PageContent'
+import "./index.scss"
 
 export default defineComponent({
   name: 'XClassicLayout',

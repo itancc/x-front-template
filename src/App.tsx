@@ -3,7 +3,7 @@ import { ElConfigProvider } from 'element-plus'
 import { RouterView } from 'vue-router'
 
 export default defineComponent({
-  name: 'XApp',
+  name: 'App',
   setup() {
     return () => (
       <ElConfigProvider size="default">

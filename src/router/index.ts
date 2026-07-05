@@ -13,7 +13,7 @@ export const router = createRouter({
 })
 
 export function initRouter(app: App<Element>) {
-  // setupBeforeEachGuard(router)
+  setupBeforeEachGuard(router)
   setupAfterEachGuard(router)
   app.use(router)
 }

@@ -41,6 +41,7 @@ interface AsyncRouteDefinition {
 }
 
 const asyncRouteDefinitions: Record<AsyncRouteKey, AsyncRouteDefinition> = {
+
   users: {
     path: 'users',
     name: 'users',
@@ -143,7 +144,8 @@ export function prefetchAsyncRoute(routeKey: AsyncRouteKey): Promise<void> {
 
   prefetchedRouteKeys.add(routeKey)
 
-  return asyncRouteDefinitions[routeKey].loader()
+  return asyncRouteDefinitions[routeKey]
+    .loader()
     .then(() => undefined)
     .catch(() => {
       prefetchedRouteKeys.delete(routeKey)

@@ -8,9 +8,9 @@ export function setupBeforeEachGuard(router: Router): void {
     async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
       const authStore = useAuthStore(store)
       const permissionStore = usePermissionStore(store)
-
-      if (to.meta.guestOnly && authStore.isAuthenticated) {
-        next('/dashboard')
+      console.log(to.meta,'itancc')
+      if (to.meta.guestOnly) {
+        next()
         return
       }
 

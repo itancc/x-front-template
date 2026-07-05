@@ -1,10 +1,16 @@
 import type { RouteRecordRaw } from 'vue-router'
-import ClassicLayout from '@/layouts/classic/index'
+import ClassicLayout from '@/layouts/index'
 
 export const baseRoutes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'crm-layout',
+    name: 'layout',
     component: ClassicLayout,
+    meta: {
+      guestOnly: true,
+    },
+    children: [
+
+    ]
   },
 ]
